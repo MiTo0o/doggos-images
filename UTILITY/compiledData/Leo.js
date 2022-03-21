@@ -1,0 +1,1 @@
+export const Leo = {"title":"Leo","imgList":[{"src":"https://raw.githubusercontent.com/MiTo0o/doggos-static/main/Leo/images/1.jpg","width":1,"height":1.333}]};
