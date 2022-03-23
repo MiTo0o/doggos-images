@@ -2,12 +2,22 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 const sizeOf = require('image-size');
+
+// https://github.com/lovell/sharp/issues/28
 sharp.cache(false);
 
 const filePaths = {
   Brownie: '../Brownie/images',
   Leo : '../Leo/images',
   Lucky: '../Lucky/images'
+}
+
+const gcd = function(a, b) {
+  if (!b) {
+    return a;
+  }
+
+  return gcd(b, a % b);
 }
 
 async function resizeFile(imgPath, imageFolderPath) {
@@ -55,8 +65,9 @@ Promise.all(resizePromises)
       const filePath = filePaths[dog]
       fs.readdirSync(filePath).forEach((file, index) => {
         let imagePath = `${filePath}/${file}`;
+
         // This really doesn't have to be like this but I'm just making sure that file names are unique
-        // Just adding making Date.now().toString() isn't good enough since the process is sometimes 
+        // Using Date.now().toString() isn't good enough since the process is sometimes 
         // faster than 1 millisecond and it will override files 
         let randomString1 = Math.random().toString(36).substring(2)
         let randomString2 = Math.random().toString(36).substring(2)
@@ -89,12 +100,11 @@ Promise.all(resizePromises)
       fs.readdirSync(filePath).forEach(file => {
         const hostedStaticPath = `https://raw.githubusercontent.com/MiTo0o/doggos-static/main/${dog}/images/${file}`
         let imageSize = sizeOf(`${filePath}/${file}`);
-    
+        let ratioGcd = gcd(imageSize.height, imageSize.width)
         const imgInfo = {
           src: hostedStaticPath,
-          width: 1,
-          // get gcd
-          height: Math.round(imageSize.height / imageSize.width * 1000) / 1000
+          width: imageSize.width / ratioGcd,
+          height: imageSize.height / ratioGcd
         }
 
         writeData.imgList.push(imgInfo);
