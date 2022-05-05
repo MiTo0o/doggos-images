@@ -18,4 +18,4 @@ step #4: run `node script.js` to compress, resize, and rename the images. It wil
 
 ## Original images
 
-original uncompressed images are in [doggos-raw-files-dump](https://github.com/MiTo0o/doggos-raw-files-dump) (private repo). They are way toooooo big for a website.
+original uncompressed images are in [doggos-raw-files-dump](https://github.com/MiTo0o/doggos-raw-files-dump). Uncompressed images are way to big for the website. THe raw file repo also contains videos that aren't being using in the gallery website.
