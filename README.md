@@ -8,7 +8,7 @@ Also has a script that will compress, resize, and automatically rename image nam
 ## Script Usage (personal note)
 step #0: add all new images to the [doggos-raw-files-dump](https://github.com/MiTo0o/doggos-raw-files-dump) repo and copy over the images dir of each dog or just go to step 1
 <br />
-step #1: Dump all images into folders, file names can be whatever but they **CANNOT OVERLAP**. It can also be any img type. (I think?)
+step #1: Dump all images into folders, file names can be whatever but they **CANNOT OVERLAP**. ~~It can also be any img type. (I think?)~~ Does not support heic.
 <br />
 step #2: cd into UTILITY and run `npm install`
 <br />
