@@ -103,8 +103,8 @@ Promise.all(resizePromises)
         let ratioGcd = gcd(imageSize.height, imageSize.width)
         const imgInfo = {
           src: hostedStaticPath,
-          width: imageSize.width / ratioGcd,
-          height: imageSize.height / ratioGcd
+          width: imageSize.width,
+          height: imageSize.height
         }
 
         writeData.imgList.push(imgInfo);
