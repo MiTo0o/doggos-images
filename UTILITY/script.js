@@ -27,7 +27,7 @@ async function resizeFile(imgPath, imageFolderPath) {
       fit: sharp.fit.inside,
       withoutEnlargement: true,
     })
-    .webp({quality: 90})
+    .webp({quality: 100})
     .toBuffer();
   const imageName = path.parse(imgPath).name
   const outputPath = `${imageFolderPath}/${imageName}.webp`
