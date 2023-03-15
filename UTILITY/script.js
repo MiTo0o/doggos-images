@@ -12,14 +12,6 @@ const filePaths = {
   Lucky: '../Lucky/images'
 }
 
-const gcd = function(a, b) {
-  if (!b) {
-    return a;
-  }
-
-  return gcd(b, a % b);
-}
-
 async function resizeFile(imgPath, imageFolderPath) {
   let buffer = await sharp(imgPath)
     .rotate()
@@ -100,6 +92,7 @@ Promise.all(resizePromises)
       fs.readdirSync(filePath).forEach(file => {
         const hostedStaticPath = `https://raw.githubusercontent.com/MiTo0o/doggos-static/main/${dog}/images/${file}`
         let imageSize = sizeOf(`${filePath}/${file}`);
+        
         const imgInfo = {
           src: hostedStaticPath,
           width: imageSize.width,
