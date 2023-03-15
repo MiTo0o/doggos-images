@@ -100,7 +100,6 @@ Promise.all(resizePromises)
       fs.readdirSync(filePath).forEach(file => {
         const hostedStaticPath = `https://raw.githubusercontent.com/MiTo0o/doggos-static/main/${dog}/images/${file}`
         let imageSize = sizeOf(`${filePath}/${file}`);
-        let ratioGcd = gcd(imageSize.height, imageSize.width)
         const imgInfo = {
           src: hostedStaticPath,
           width: imageSize.width,
