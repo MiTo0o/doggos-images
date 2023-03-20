@@ -9,11 +9,14 @@ sharp.cache(false);
 const filePaths = {
   Brownie: '../Brownie/images',
   Leo : '../Leo/images',
-  Lucky: '../Lucky/images'
+  Lucky: '../Lucky/images',
+  Elvis: '../Elvis/images'
 }
 
+// samsung messes up the images, need work around  
+// https://github.com/lovell/sharp/issues/3488
 async function resizeFile(imgPath, imageFolderPath) {
-  let buffer = await sharp(imgPath)
+  let buffer = await sharp(imgPath, { failOn: 'error' })
     .rotate()
     .resize(900, 600, {
       fit: sharp.fit.inside,
@@ -23,7 +26,7 @@ async function resizeFile(imgPath, imageFolderPath) {
     .toBuffer();
   const imageName = path.parse(imgPath).name
   const outputPath = `${imageFolderPath}/${imageName}.webp`
-  return sharp(buffer).toFile(outputPath);
+  return sharp(buffer, { failOn: 'error' }).toFile(outputPath);
 }
 
 let resizePromises = []
