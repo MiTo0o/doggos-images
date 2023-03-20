@@ -17,6 +17,9 @@ step #3: open script.js and add any new folder paths if there are new dogs
 step #4: run `node script.js` to compress, resize, and rename the images. It will also compile data and write to the /UTILITY/compiledData folder to be used in [doggos](https://github.com/MiTo0o/doggos) website code.
 
 <br />
+PROFILE IMAGES: Foe the profile images of a specific dog, use a 3:2 aspect ratio and try to choose a high quality image
+
+<br />
 REMINDER: You like doing `git add .`. You will be in the utility dir after running the script, either use the `-A` flag or cd out and use `git add .`
 
 ## Original images
