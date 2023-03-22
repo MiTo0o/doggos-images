@@ -18,7 +18,7 @@ const filePaths = {
 async function resizeFile(imgPath, imageFolderPath) {
   let buffer = await sharp(imgPath, { failOn: 'error' })
     .rotate()
-    .resize(900, 600, {
+    .resize(1080, 720, {
       fit: sharp.fit.inside,
       withoutEnlargement: true,
     })
