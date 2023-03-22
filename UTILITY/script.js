@@ -105,6 +105,6 @@ Promise.all(resizePromises)
         writeData.imgList.push(imgInfo);
       })
       const data = `export const ${dog} = ${JSON.stringify(writeData)};`;
-      fs.writeFileSync(`./compiledData/${dog}.js`, data)
+      fs.writeFileSync(`./compiledData/${dog}.ts`, data)
     }
   })
