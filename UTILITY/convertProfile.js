@@ -14,7 +14,7 @@ const filePaths = {
     Elvis: '../Elvis',
     Rufus: '../Rufus',
     Sesame: '../Sesame',
-    Assorted: '../Assorted Doggos'
+    Assorted: '../Assorted'
     // Assorted: path.join(__dirname, '../Assorted Doggos'),
 }
 

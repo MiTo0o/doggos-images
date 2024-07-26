@@ -14,7 +14,7 @@ const filePaths = {
   Elvis: '../Elvis/images',
   Rufus: '../Rufus/images',
   Sesame: '../Sesame/images',
-  Assorted: '../Assorted Doggos/images',
+  Assorted: '../Assorted/images',
 }
 
 // samsung messes up the images, need work around  
