@@ -22,6 +22,8 @@ PROFILE IMAGES: Foe the profile images of a specific dog, use a 3:2 aspect ratio
 <br />
 REMINDER: You like doing `git add .`. You will be in the utility dir after running the script, either use the `-A` flag or cd out and use `git add .`
 
+<br />
+DEBUG: Folder names with spaces might be an issue, 
 ## Original images
 
 original uncompressed images are in [doggos-raw-files-dump](https://github.com/MiTo0o/doggos-raw-files-dump). Uncompressed images are way to big for the website. The raw file repo also contains videos that aren't being using in the gallery website.

@@ -11,17 +11,26 @@ const filePaths = {
     Brownie: '../Brownie',
     Leo : '../Leo',
     Lucky: '../Lucky',
-    Elvis: '../Elvis'
+    Elvis: '../Elvis',
+    Rufus: '../Rufus',
+    Sesame: '../Sesame',
+    Assorted: '../Assorted Doggos'
+    // Assorted: path.join(__dirname, '../Assorted Doggos'),
 }
 
 async function convertFile(imgPath, imageFolderPath) {
-    let buffer = await sharp(imgPath, { failOn: 'error' })
-      .rotate()
-      .webp({quality: 100})
-      .toBuffer();
-    const imageName = path.parse(imgPath).name
-    const outputPath = `${imageFolderPath}/${imageName}.webp`
-    return sharp(buffer, { failOn: 'error' }).toFile(outputPath);
+    // console.log(imgPath, imageFolderPath)
+    try {
+        let buffer = await sharp(imgPath, { failOn: 'error' })
+            .rotate()
+            .webp({quality: 100})
+            .toBuffer();
+        const imageName = path.parse(imgPath).name
+        const outputPath = `${imageFolderPath}/${imageName}.webp`
+        return sharp(buffer, { failOn: 'error' }).toFile(outputPath);
+    } catch(e) {
+        console.log(e)
+    }
   }
   
 
